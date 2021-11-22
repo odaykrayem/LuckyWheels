@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="false" android:state_selected="false">
+       <bitmap android:src="@drawable/bg_img_btn_green_rb"/>
+
+    </item>
+    <item android:state_pressed="true">
+        <bitmap android:src="@drawable/bg_img_btn_red"/>
+
+    </item>
+
+    <item android:state_pressed="true" android:state_selected="true">
+        <bitmap android:src="@drawable/bg_img_btn_red"/>
+    </item>
+
+
+</selector>
