@@ -132,6 +132,8 @@ public class ProfileFragment extends Fragment implements SwipeRefreshLayout.OnRe
                             Toast.makeText(getContext(), "update data Error1! " + e.toString()
                                     + "\nCause " + e.getCause()
                                     + "\nmessage" + e.getMessage(), Toast.LENGTH_LONG).show();
+                            mSwipeRefreshLayout.setRefreshing(false);
+
                         }
                     }
                 },
@@ -141,6 +143,7 @@ public class ProfileFragment extends Fragment implements SwipeRefreshLayout.OnRe
                         Toast.makeText(getContext(), "update data Error2! " + error.toString()
                                 + "\nCause " + error.getCause()
                                 + "\nmessage" + error.getMessage(), Toast.LENGTH_LONG).show();
+                        mSwipeRefreshLayout.setRefreshing(false);
                     }
                 }) {
             @Nullable

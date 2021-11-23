@@ -1,72 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="8dp"
+    android:layout_marginStart="6dp"
     android:layout_marginTop="6dp"
     android:layout_marginEnd="6dp"
-    android:layout_marginStart="6dp"
+    android:layout_marginBottom="6dp"
     android:elevation="8dp"
+    android:layoutDirection="rtl"
+    app:cardCornerRadius="8dp"
+
     >
 
     <RelativeLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
+        android:layout_margin="2dp">
 
-        >
-
-        <!--image view for displaying user image-->
-
-        <ImageView
-            android:id="@+id/iv_item_icon"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            />
 
         <LinearLayout
             android:id="@+id/linear1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/iv_item_icon"
-            android:orientation="vertical"
-            android:layout_marginEnd="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:layout_marginStart="25dp"
             android:gravity="start"
+            android:orientation="vertical"
 
             >
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/user_name"
+                android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/item_tv_fixed_txt_size" />
+                android:textSize="@dimen/item_tv_txt_size" />
 
             <!--text view for displaying last name-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="@string/prize"
+                android:textStyle="bold"
+                android:text="@string/email"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/item_tv_fixed_txt_size" />
+                android:textSize="@dimen/item_tv_txt_size" />
 
-            <!--text view for displaying user email-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="@string/date"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/item_tv_fixed_txt_size" />
 
         </LinearLayout>
 
@@ -74,43 +59,62 @@
             android:id="@+id/linear2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/linear1"
-            android:orientation="vertical"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toEndOf="@id/linear1"
             android:gravity="start"
-            >
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/tv_item_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="User Name"
-                android:textColor="@color/darkGreen"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/item_tv_txt_size" />
 
             <!--text view for displaying last name-->
+            <TextView
+                android:id="@+id/tv_item_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="email"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/item_tv_txt_size" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/linear3"
+            android:background="@color/colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@id/linear2"
+            >
+
+
             <TextView
                 android:id="@+id/tv_item_prize"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical"
                 android:text="Prize"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/darkGreen"
                 android:textSize="@dimen/item_tv_txt_size" />
 
-            <!--text view for displaying user email-->
-            <TextView
-                android:id="@+id/tv_item_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Date"
-                android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/item_tv_txt_size" />
+        </RelativeLayout>
 
-        </LinearLayout>
 
     </RelativeLayout>
 

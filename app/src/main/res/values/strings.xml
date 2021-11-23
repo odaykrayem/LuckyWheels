@@ -33,6 +33,8 @@
     <string name="ref_code">Referral Code</string>
     <string name="refresh_hint">You can always refresh to update your information</string>
     <string name="ref_code_times">Referral Times</string>
+    <string name="participate">Participate</string>
+    <string name="checkInternetConn">Please check your internet connection</string>
 
 
 </resources>

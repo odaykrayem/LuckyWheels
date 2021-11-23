@@ -4,27 +4,27 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 
-import com.example.luckywheels.Models.WinnerModel;
+import com.example.luckywheels.Models.ParticipantModel;
 import com.example.luckywheels.R;
 
-public class WinnersListAdapter extends RecyclerView.Adapter<WinnersListAdapter.ViewHolder> {
+import java.util.ArrayList;
 
+public class WinnersAdapter extends RecyclerView.Adapter<WinnersAdapter.ViewHolder> {
 
     // variable for our array list and context.
-    private ArrayList<WinnerModel> winnerModelArrayList;
+    private ArrayList<ParticipantModel> participantModelArrayList;
     private Context context;
 
     // creating a constructor.
-    public WinnersListAdapter(ArrayList<WinnerModel> userModalArrayList, Context context) {
-        this.winnerModelArrayList = userModalArrayList;
+    public WinnersAdapter(ArrayList<ParticipantModel> participantModelArrayList, Context context) {
+        this.participantModelArrayList = participantModelArrayList;
         this.context = context;
     }
 
@@ -39,38 +39,33 @@ public class WinnersListAdapter extends RecyclerView.Adapter<WinnersListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        // getting data from our array list in our modal class.
-        WinnerModel winnerModel = winnerModelArrayList.get(position);
+        ParticipantModel participantModel = participantModelArrayList.get(position);
 
-        // on below line we are setting data to our text view.
-        holder.nameTV.setText(winnerModel.getUserName());
-        holder.prizeTV.setText(winnerModel.getPrize());
-        holder.dateTV.setText(winnerModel.getDate());
-
-        //choosing icon for the position
-//        switch (position){
-//            case 0:
-//        }
+        holder.userNameTV.setText(participantModel.getUser_name().trim());
+        holder.emailTV.setText(participantModel.getEmail().trim().substring(0,5)+"********");
+        holder.prizeTV.setText(String.valueOf(participantModel.getPrize()));
 
     }
 
     @Override
     public int getItemCount() {
         // returning the size of array list.
-        return winnerModelArrayList.size();
+        return participantModelArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // creating a variable for our text view and image view.
-        private TextView nameTV, prizeTV, dateTV;
-        private ImageView icon;
+        private TextView userNameTV, emailTV, prizeTV;
+        private Button makeNotWinnerBtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            // initializing our variables.
-            nameTV = itemView.findViewById(R.id.tv_item_name);
+//            // initializing our variables.
+            userNameTV = itemView.findViewById(R.id.tv_item_name);
+            emailTV = itemView.findViewById(R.id.tv_item_email);
             prizeTV = itemView.findViewById(R.id.tv_item_prize);
+
         }
     }
 }

@@ -143,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
     public void gotoProfile(View view) {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ProfileFragment()).commit();
         Toast.makeText(HomeActivity.this, "Profile", Toast.LENGTH_LONG).show();
-        toolbar.setTitle(R.string.menu_lottery_winner_list_string);
+        toolbar.setTitle(R.string.menu_profile_string);
         luckyWheelBtn.setPressed(false);
         lotteryBtn.setPressed(false);
         winnersListBtn.setPressed(false);

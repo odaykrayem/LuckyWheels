@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/exit_to_app/baseline_exit_to_app_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/money/baseline_money_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ff362e" />
-                            <entry key="outputName" value="ic_exit" />
+                            <entry key="color" value="19ff30" />
+                            <entry key="outputName" value="ic_contest_money" />
                             <entry key="sourceFile" value="C:\Users\O_o\AndroidStudioProjects\LuckyWheels" />
                           </map>
                         </option>

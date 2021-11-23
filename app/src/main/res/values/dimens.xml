@@ -14,7 +14,7 @@
 
     <!-- Winners List Item -->
     <dimen name="item_tv_fixed_txt_size">20sp</dimen>
-    <dimen name="item_tv_txt_size">20sp</dimen>
+    <dimen name="item_tv_txt_size">25sp</dimen>
 
     <dimen name="profile_text_size">25sp</dimen>
 </resources>

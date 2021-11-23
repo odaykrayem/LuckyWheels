@@ -13,12 +13,48 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65f7e6e7-9c6f-471a-a6d1-1676207c13e2" name="Default Changelist" comment="" />
+    <list default="true" id="65f7e6e7-9c6f-471a-a6d1-1676207c13e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/Adapters/ContestsAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/Adapters/WinnersAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/Models/ContestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/Models/ParticipantModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_contest_money.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_money_bag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_swipe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/contest_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/rv_item_winners.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/Adapters/WinnersListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/Adapters/WinnersListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/Utils/NetworkUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/Utils/NetworkUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/fragments/HomeFragments/LotteryFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/fragments/HomeFragments/LotteryFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/fragments/HomeFragments/LotteryWinnersListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/fragments/HomeFragments/LotteryWinnersListFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/fragments/HomeFragments/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/luckywheels/fragments/HomeFragments/ProfileFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lottery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lottery.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lottery_winner_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_lottery_winner_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_winners_list_rv.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="4200cc6fa8fd74a3" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -35,8 +71,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="layoutResourceFile" />
         <option value="Class" />
       </list>
     </option>
@@ -70,33 +106,35 @@
     <key name="android.template.1620101069">
       <recent name="com.example.luckywheels" />
     </key>
+    <key name="android.template.-635790051">
+      <recent name="com.example.luckywheels" />
+    </key>
     <key name="android.template.-958992487">
       <recent name="com.example.luckywheels" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\drawable" />
-      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\layout" />
-      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res" />
-      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\values" />
+    <key name="android.template.1105035515">
+      <recent name="com.example.luckywheels" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.luckywheels" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\layout-v21" />
-      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\menu" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.luckywheels.Models" />
       <recent name="com.example.luckywheels.Adapters" />
       <recent name="com.example.luckywheels.UIUtils" />
       <recent name="com.example.luckywheels.Utils" />
       <recent name="com.example.luckywheels" />
     </key>
-    <key name="android.template.-635790051">
-      <recent name="com.example.luckywheels" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\drawable" />
+      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\layout" />
+      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res" />
+      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\values" />
     </key>
-    <key name="android.template.1105035515">
-      <recent name="com.example.luckywheels" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\layout-v21" />
+      <recent name="C:\Users\O_o\AndroidStudioProjects\LuckyWheels\app\src\main\res\menu" />
     </key>
   </component>
   <component name="RunManager">
@@ -170,17 +208,29 @@
       <option name="presentableId" value="Default" />
       <updated>1633800054887</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1637597867521</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637597867521</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="96" key="#PSD" timestamp="1634668391584">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="0" y="96" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1634668391584" />
-    <state x="147" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1637569467429">
+    <state x="147" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1637674804395">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="147" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1637569467429" />
+    <state x="147" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1637674804395" />
     <state x="132" y="223" width="419" height="288" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1634044227243">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -189,26 +239,30 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="21" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1637512403677" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1637527878197">
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1637673822593">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1637527878197" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1637673822593" />
     <state x="263" y="119" key="AndroidCreateResourceDirectoryDialog" timestamp="1634190382830">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="263" y="119" key="AndroidCreateResourceDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1634190382830" />
-    <state x="294" y="181" key="AndroidCreateResourceFileDialog" timestamp="1634666695687">
+    <state x="294" y="181" key="AndroidCreateResourceFileDialog" timestamp="1637670743966">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="294" y="181" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1634666695687" />
-    <state x="541" y="177" key="AndroidCreateXmlResourceDialog" timestamp="1637594910063">
+    <state x="294" y="181" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1637670743966" />
+    <state x="541" y="177" key="AndroidCreateXmlResourceDialog" timestamp="1637686541687">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="541" y="177" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1637594910063" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1634189160505">
+    <state x="541" y="177" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1637686541687" />
+    <state x="258" y="0" key="CommitChangelistDialog2" timestamp="1637597863850">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1634189160505" />
+    <state x="258" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1637597863850" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1637669745982">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1637669745982" />
     <state x="553" y="257" key="Github.ShareDialog" timestamp="1637597652742">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -217,22 +271,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="64" y="69" width="740" height="589" key="Github.UntrackedFilesDialog/0.0.1366.728@0.0.1366.728" timestamp="1637597670294" />
-    <state width="1323" height="127" key="GridCell.Tab.0.bottom" timestamp="1637595412030">
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom" timestamp="1637686878941">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="127" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1637595412030" />
-    <state width="1323" height="127" key="GridCell.Tab.0.center" timestamp="1637595412030">
+    <state width="1323" height="127" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1637686878941" />
+    <state width="1323" height="127" key="GridCell.Tab.0.center" timestamp="1637686878940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="127" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1637595412030" />
-    <state width="1323" height="127" key="GridCell.Tab.0.left" timestamp="1637595412029">
+    <state width="1323" height="127" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1637686878940" />
+    <state width="1323" height="127" key="GridCell.Tab.0.left" timestamp="1637686878939">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="127" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1637595412029" />
-    <state width="1323" height="127" key="GridCell.Tab.0.right" timestamp="1637595412030">
+    <state width="1323" height="127" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1637686878939" />
+    <state width="1323" height="127" key="GridCell.Tab.0.right" timestamp="1637686878940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="127" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1637595412030" />
+    <state width="1323" height="127" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1637686878940" />
     <state x="0" y="107" key="IDE.errors.dialog" timestamp="1634472650486">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -241,18 +295,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1634668449160" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1637597207799">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1637597883312">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1637597207799" />
-    <state x="499" y="145" key="chooseDestDirectoryDialog" timestamp="1634416927941">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1637597883312" />
+    <state x="499" y="145" key="chooseDestDirectoryDialog" timestamp="1637671048374">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="145" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1634416927941" />
-    <state x="25" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1637597496226">
+    <state x="499" y="145" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1637671048374" />
+    <state x="25" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1637669442974">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="25" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1637597496226" />
+    <state x="25" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1637669442974" />
     <state x="104" y="107" key="psd.add.library.dependency.panel.dimension" timestamp="1634464698389">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
