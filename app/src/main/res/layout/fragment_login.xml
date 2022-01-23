@@ -45,7 +45,7 @@
             android:paddingEnd="10dp"
             android:paddingRight="10dp"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/colorAccent">
+            app:passwordToggleTint="@color/lightGreen">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_password"
@@ -78,7 +78,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/bg_btn_reg_login"
                 android:fontFamily="@string/menu_text_font_family"
-                android:text="login"
+                android:text="@string/login"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"

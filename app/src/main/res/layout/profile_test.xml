@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                style="@style/headerText"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/account_info_lbl"/>
+<!--                android:text="Account Info"-->
+
+
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/nameImageView"
+                    android:src="@drawable/ic_profile_user"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:text="@string/user_name"
+                    android:layout_toEndOf="@id/nameImageView"
+                    style="@style/profileDetailsTextMain" />
+
+                <TextView
+                    android:id="@+id/profile_name_tv"
+                    android:text="user name"
+                    android:layout_toEndOf="@id/nameImageView"
+                    style="@style/profileDetailsMiniText" />
+
+            </RelativeLayout>
+
+
+            <View style="@style/proifleDetailsView" />
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/emailImageView"
+                    android:src="@drawable/ic_profile_email"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:text="@string/email_lbl"
+                    android:layout_toEndOf="@id/emailImageView"
+                    style="@style/profileDetailsTextMain" />
+
+                <TextView
+                    android:id="@+id/profile_email_tv"
+                    android:text="user@email.com"
+                    android:layout_toEndOf="@id/emailImageView"
+                    style="@style/profileDetailsMiniText" />
+
+            </RelativeLayout>
+            <View style="@style/proifleDetailsView" />
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/addressImageView"
+                    android:src="@drawable/ic_profile_balance"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:text="@string/your_balance"
+                    android:layout_toEndOf="@id/addressImageView"
+                    style="@style/profileDetailsTextMain" />
+
+                <TextView
+                    android:id="@+id/profile_balance_tv"
+                    android:text="0"
+                    android:layout_toEndOf="@id/addressImageView"
+                    style="@style/profileDetailsMiniText" />
+
+            </RelativeLayout>
+            <View style="@style/proifleDetailsView" />
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/dobImageView"
+                    android:src="@drawable/ic_profile_points"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:text="@string/points"
+                    android:layout_toEndOf="@id/dobImageView"
+                    style="@style/profileDetailsTextMain" />
+
+                <TextView
+                    android:id="@+id/profile_points_tv"
+                    android:text="0"
+                    android:layout_toEndOf="@id/dobImageView"
+                    style="@style/profileDetailsMiniText" />
+
+            </RelativeLayout>
+
+            <View style="@style/proifleDetailsView" />
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/mobileImageView"
+                    android:src="@drawable/ic_profile_ref_code"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:text="@string/ref_code"
+                    android:layout_toEndOf="@id/mobileImageView"
+                    style="@style/profileDetailsTextMain"/>
+
+                <TextView
+                    android:id="@+id/profile_ref_code_tv"
+                    android:text="ref code"
+                    android:layout_toEndOf="@id/mobileImageView"
+                    style="@style/profileDetailsMiniText"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"/>
+                <ImageButton
+                    android:id="@+id/copy_btn"
+                    android:src="@drawable/ic_profile_copy"
+                    style="@style/profileCopyImage"
+                    android:background="@android:color/transparent"
+                    />
+
+            </RelativeLayout>
+
+            <View style="@style/proifleDetailsView" />
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/mobileImageView2"
+                    android:src="@drawable/ic_profile_ref_times"
+                    style="@style/profileDetailsImage" />
+
+                <TextView
+                    android:text="@string/ref_code_times"
+                    android:layout_toEndOf="@id/mobileImageView2"
+                    style="@style/profileDetailsTextMain"/>
+
+                <TextView
+                    android:id="@+id/profile_ref_code_times_tv"
+                    android:text="ref code"
+                    android:layout_toEndOf="@id/mobileImageView2"
+                    style="@style/profileDetailsMiniText" />
+
+            </RelativeLayout>
+            <View style="@style/proifleDetailsView" />
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/mobileImageView3"
+                    android:src="@drawable/ic_profile_transfer_points"
+                    style="@style/profileDetailsImage"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/transfer_txt"
+                    android:text="@string/transfer_points"
+                    android:layout_toEndOf="@id/mobileImageView3"
+                    style="@style/profileDetailsTextMain"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/profile_points_et"
+                    android:hint="أدخل النقاط"
+                    android:layout_toEndOf="@id/mobileImageView3"
+                    android:layout_below="@id/transfer_txt"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    style="@style/profileDetailsEditText"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"/>
+<!--                <ImageButton-->
+<!--                    android:id="@+id/btn_profile_transfer_points"-->
+<!--                    android:layout_width="45dp"-->
+<!--                    android:layout_height="45dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:src="@drawable/ic_profile_transfer_btn"-->
+<!--                    android:layout_centerVertical="true"/>-->
+            </RelativeLayout>
+            <View style="@style/proifleDetailsView" />
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <ImageView
+                    android:id="@+id/mobileImageView4"
+                    android:src="@drawable/payeer"
+                    style="@style/payeerDetailsImage"
+                    android:layout_centerVertical="true"/>
+
+                <TextView
+                    android:id="@+id/withdrawal_txt"
+                    android:text="@string/withdrawal"
+                    android:layout_toEndOf="@id/mobileImageView4"
+                    style="@style/profileDetailsTextMain"/>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/profile_withdrawal_et"
+                    android:hint="أدخل الرصيد"
+                    android:layout_toEndOf="@id/mobileImageView4"
+                    android:layout_below="@id/withdrawal_txt"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    style="@style/profileDetailsEditText"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    />
+<!--                <ImageButton-->
+<!--                    android:id="@+id/btn_profile_withdrawal"-->
+<!--                    android:layout_width="45dp"-->
+<!--                    android:layout_height="45dp"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:background="@android:color/transparent"-->
+<!--                    android:src="@drawable/ic_profile_withdrawal_btn"-->
+<!--                    android:layout_centerVertical="true"/>-->
+            </RelativeLayout>
+            <View style="@style/proifleDetailsView" />
+<!--            <RelativeLayout style="@style/profileDetailsLayout">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/mobileImageView5"-->
+<!--                    android:src="@drawable/ic_profile_guide"-->
+<!--                    style="@style/profileDetailsImage"-->
+<!--                   />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_profile_guide"-->
+<!--                    android:layout_width="70dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_toEndOf="@id/mobileImageView5"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:text="@string/guide"-->
+<!--                    android:textColor="@android:color/black"-->
+<!--                    android:background="@color/colorPrimaryDark"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    />-->
+
+
+<!--            </RelativeLayout>-->
+<!--            <View style="@style/proifleDetailsView" />-->
+            <RelativeLayout style="@style/profileDetailsLayout">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/logout_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/log_out"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:padding="10dp"
+                    android:layout_margin="20dp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:textAlignment="center"
+                    android:background="@drawable/bg_profile_logout_btn"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </RelativeLayout>
+            <View style="@style/proifleDetailsView" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -42,6 +42,8 @@ public class SharedPrefs {
     //to determine visibility when destroy activity
     public static String SPIN_TIMER_STATE = "spin_timer_state";
     public static String RECEIVER_STATE = "broadcast_receiver_state";
+    public static String CLICKS_NUMBER = "clicks_number";
+    public static String TIME_DOWN_COUNTER_TYPE = "counter_type";
 
 
     //get the SharedPreferences object instance

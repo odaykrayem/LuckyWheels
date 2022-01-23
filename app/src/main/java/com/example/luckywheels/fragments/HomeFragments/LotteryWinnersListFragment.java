@@ -1,12 +1,16 @@
 package com.example.luckywheels.fragments.HomeFragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,6 +35,15 @@ import com.example.luckywheels.Models.ParticipantModel;
 import com.example.luckywheels.Models.WinnerModel;
 import com.example.luckywheels.R;
 import com.example.luckywheels.Utils.NetworkUtils;
+import com.example.luckywheels.Utils.SharedPrefs;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,6 +52,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
 
 public class LotteryWinnersListFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
 
@@ -51,9 +68,11 @@ public class LotteryWinnersListFragment extends Fragment implements SwipeRefresh
     private NestedScrollView nestedSV;
     SwipeRefreshLayout mSwipeRefreshLayout;
     LinearLayout note;
-
+    Toast toast;
     private ArrayList<ParticipantModel> winnersModelArrayList;
     private WinnersAdapter winnersAdapter;
+//    AdView mAdView;
+ private View view;
 
     final String TAG = "winners_FR";
 
@@ -66,6 +85,7 @@ public class LotteryWinnersListFragment extends Fragment implements SwipeRefresh
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_lottery_winner_list,container,false);
+        this.view = view;
         winnersModelArrayList = new ArrayList<>();
         note = view.findViewById(R.id.note);
         winnerListRV = view.findViewById(R.id.rv_winners);
@@ -84,14 +104,28 @@ public class LotteryWinnersListFragment extends Fragment implements SwipeRefresh
             public void run() {
 
                 mSwipeRefreshLayout.setRefreshing(true);
-                getWinners();
+                getWinners(view);
 
             }
         });
+
+        LayoutInflater inflater1 = getLayoutInflater();
+        View layout = inflater1.inflate(R.layout.custom_toast,
+                (ViewGroup) view.findViewById(R.id.toast_layout_root));
+
+//        ImageView image = (ImageView) layout.findViewById(R.id.image);
+//        image.setImageResource(R.drawable.ic_contest_money);
+        TextView text = (TextView) layout.findViewById(R.id.text);
+        text.setText(getContext().getResources().getText(R.string.winner_toast));
+
+        toast = new Toast(getContext());
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
         return view;
     }
 
-    private void getWinners() {
+    private void getWinners(View view) {
         // creating a new variable for our request queue
         RequestQueue queue = Volley.newRequestQueue(getContext());
         // creating a variable for our json object request and passing our url to it.
@@ -107,17 +141,44 @@ public class LotteryWinnersListFragment extends Fragment implements SwipeRefresh
                             String code = jsonObject.getString("error");
                             if (code.equals("false")) {
                                 JSONArray operations = jsonObject.getJSONArray("list");
-                                Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                                if(getContext() != null){
+                                    Toast.makeText(getContext(), R.string.get_winners, Toast.LENGTH_LONG).show();
+                                }
                                 for (int i = 0; i < operations.length(); i++) {
                                     JSONObject object = operations.getJSONObject(i);
                                     Log.e(TAG, object.toString());
                                     // on below line we are extracting data from our json object.
                                     winnersModelArrayList.add(new ParticipantModel(
                                             object.getString("user_name"),
+                                            object.getInt("user_id"),
                                             object.getString("email"),
                                             object.getInt("prize"),
                                             object.getString("draw_date")));
                                     System.out.println("jsonObject" + object.toString());
+                                    if(view != null){
+                                        if(object != null){
+                                            if(getContext() != null){
+                                                if(object.getInt("user_id") == SharedPrefs.getInt(getContext(),SharedPrefs.KEY_USER_ID)){
+                                                    final KonfettiView konfettiView = view.findViewById(R.id.viewKonfetti);
+
+//                                            Toast.makeText(getContext(), "u are winner", Toast.LENGTH_SHORT).show();
+                                                    toast.show();
+
+                                                    konfettiView.build()
+                                                            .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+                                                            .setDirection(0.0, 359.0)
+                                                            .setSpeed(1f, 3f)
+                                                            .setFadeOutEnabled(true)
+                                                            .setTimeToLive(2000L)
+                                                            .addShapes(Shape.Square.INSTANCE, Shape.Circle.INSTANCE)
+                                                            .addSizes(new Size(12, 5f))
+                                                            .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+                                                            .streamFor(200, 2000L);
+                                                }
+                                            }
+                                        }
+                                    }
+
                                 }
                                 if (winnersModelArrayList.size() > 0) {
                                     note.setVisibility(View.GONE);
@@ -151,13 +212,6 @@ public class LotteryWinnersListFragment extends Fragment implements SwipeRefresh
             @Override
             public void onErrorResponse(VolleyError error) {
                 mSwipeRefreshLayout.setRefreshing(false);
-
-
-                // handling on error listener method.
-                Toast.makeText(getContext(), "Fail to get data.." + error.toString()
-
-                        + "\nCause " + error.getCause()
-                        + "\nmessage" + error.getMessage(), Toast.LENGTH_LONG).show();
                 System.out.println("error2" + error.toString()
 
                         + "\nCause " + error.getCause()
@@ -182,12 +236,21 @@ public class LotteryWinnersListFragment extends Fragment implements SwipeRefresh
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getWinners();
+        getWinners(view);
+        //initialize for ads
+        MobileAds.initialize(requireContext(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        //bind view and load banner ads for it
+
     }
 
     @Override
     public void onRefresh() {
-        getWinners();
+
+        getWinners(view);
     }
 
 

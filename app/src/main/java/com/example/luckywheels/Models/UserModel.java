@@ -8,7 +8,7 @@ public class UserModel {
     private String email;
     private String password;
     private int points;
-    private int balance;
+    private float balance;
     private String referralCode;
     private String regRefCode;
     private int refTimes;
@@ -24,7 +24,7 @@ public class UserModel {
         this.regRefCode = regRefCode;
     }
     //login constructor
-    public UserModel(int userId, String firstName, String middleName, String lastName, String email, int points, int balance, String referralCode, int refTimes) {
+    public UserModel(int userId, String firstName, String middleName, String lastName, String email, int points, float balance, String referralCode, int refTimes) {
         this.userId = userId;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -91,7 +91,7 @@ public class UserModel {
         return points;
     }
 
-    public int getBalance() {
+    public float getBalance() {
         return balance;
     }
 

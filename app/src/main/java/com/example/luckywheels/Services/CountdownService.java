@@ -8,7 +8,6 @@ import android.os.IBinder;
 import android.util.Log;
 import com.example.luckywheels.Utils.Constants;
 import com.example.luckywheels.Utils.SharedPrefs;
-
 public class CountdownService extends Service {
 
     public static final String BROADCAST_ACTION = "com.example.luckywheels.Services";
@@ -24,7 +23,8 @@ public class CountdownService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.e(TAG, "Starting Timer..");
+        Log.e(TAG, "Starting Timer One Day..");
+        Log.e(TAG, String.valueOf((SharedPrefs.getLong(getApplicationContext(), SharedPrefs.TIMER_TIME_LEFT))));
 
         if((SharedPrefs.getLong(getApplicationContext(), SharedPrefs.TIMER_TIME_LEFT) < START_TIME_IN_MILLIS) &&
                 (SharedPrefs.getLong(getApplicationContext(), SharedPrefs.TIMER_TIME_LEFT) != 0)){
@@ -51,7 +51,7 @@ public class CountdownService extends Service {
 
             @Override
             public void onFinish() {
-                SharedPrefs.save(getApplicationContext(), SharedPrefs.TIMER_TIME_LEFT, START_TIME_IN_MILLIS);
+                SharedPrefs.save(getApplicationContext(), SharedPrefs.TIMER_TIME_LEFT, 0L);
                 SharedPrefs.savePref(getApplicationContext(), SharedPrefs.SPIN_TIMER_STATE, false);
                 intent.putExtra("timer_finish", true);
                 sendBroadcast(intent);

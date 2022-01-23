@@ -1,121 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="6dp"
-    android:layout_marginTop="6dp"
-    android:layout_marginEnd="6dp"
-    android:layout_marginBottom="6dp"
-    android:elevation="8dp"
+    android:padding="5dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="10dp"
+    android:clipToPadding="false"
+    android:background="@drawable/bg_item_winners_list"
     android:layoutDirection="rtl"
-    app:cardCornerRadius="8dp"
-
     >
 
-    <RelativeLayout
-        android:id="@+id/relative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dp">
-
-
-        <LinearLayout
-            android:id="@+id/linear1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="start"
-            android:orientation="vertical"
-
-            >
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/user_name"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/item_tv_txt_size" />
-
-            <!--text view for displaying last name-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:text="@string/email"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/item_tv_txt_size" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_toEndOf="@id/linear1"
-            android:gravity="start"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_item_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="User Name"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/item_tv_txt_size" />
-
-            <!--text view for displaying last name-->
-            <TextView
-                android:id="@+id/tv_item_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="email"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/item_tv_txt_size" />
-
-
-        </LinearLayout>
 
         <RelativeLayout
-            android:id="@+id/linear3"
-            android:background="@color/colorAccent"
+            android:id="@+id/relative"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="10dp"
-            android:layout_alignParentEnd="true"
-            android:layout_toEndOf="@id/linear2"
-            >
+            android:layout_margin="2dp">
 
 
-            <TextView
-                android:id="@+id/tv_item_prize"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:layout_centerInParent="true"
-                android:gravity="center_vertical"
-                android:layout_gravity="center_vertical"
-                android:text="Prize"
-                android:textColor="@color/darkGreen"
-                android:textSize="@dimen/item_tv_txt_size" />
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="start"
+                android:orientation="vertical"
+
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_name"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/item_tv_fixed_txt_size" />
+
+                <!--text view for displaying last name-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:text="@string/email_lbl"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/item_tv_fixed_txt_size" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/linear1"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_item_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="User Name"
+                    android:textColor="@color/gold"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textSize="@dimen/item_tv_txt_size" />
+
+                <!--text view for displaying last name-->
+                <TextView
+                    android:id="@+id/tv_item_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="email"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="@color/gold"
+                    android:textSize="@dimen/item_tv_txt_size" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/linear3"
+                android:background="@drawable/bg_btn_gold"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@+id/linear2"
+                >
+
+
+                <TextView
+                    android:id="@+id/tv_item_prize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Prize"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="25sp"
+                    android:fontFamily="@string/menu_text_font_family"
+                    android:letterSpacing="0.5"/>
+
+            </RelativeLayout>
+
 
         </RelativeLayout>
 
-
-    </RelativeLayout>
-
-</androidx.cardview.widget.CardView>
+</RelativeLayout>

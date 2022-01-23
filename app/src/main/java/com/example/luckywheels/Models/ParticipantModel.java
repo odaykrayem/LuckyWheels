@@ -28,7 +28,13 @@ public class ParticipantModel {
         this.prize = prize;
         this.draw_date = draw_date;
     }
-
+    public ParticipantModel( String user_name,int user_id, String email, int prize, String draw_date) {
+        this.user_name = user_name;
+        this.user_id = user_id;
+        this.email = email;
+        this.prize = prize;
+        this.draw_date = draw_date;
+    }
 
     public String getEmail() {
         return email;

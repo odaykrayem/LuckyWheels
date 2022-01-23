@@ -2,12 +2,27 @@
 <resources>
     <color name="colorPrimary">#57AF0F</color>
     <color name="colorPrimaryDark">#5DA128</color>
-    <color name="colorAccent">#B6D0A4</color>
+    <color name="colorAccent">#133707</color>
+    <color name="lightGreen">#B6D0A4</color>
     <color name="darkGreen">#112E01</color>
     <color name="light_red">#FF2639</color>
+    <color name="dark_red">#810812</color>
+
     <color name="grey">#757575</color>
+    <color name="light_grey">#9E9B9B</color>
+
+    <color name="dark_grey">#393636</color>
+
     <color name="blue">#0C8B9C</color>
+    <color name="gold">#d4af37</color>
+    <color name="light_gold">#EAE1B5</color>
+    <color name="light_gold_bg">#C6EAE1B5</color>
 
-
-
+    <!--colors for profile-->
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="profileBackground">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="profileEditTextColor">#707070</color>
 </resources>

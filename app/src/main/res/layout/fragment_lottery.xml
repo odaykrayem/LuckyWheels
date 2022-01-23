@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipe"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_marginTop="6dp"
-    android:background="@color/colorAccent">
+    android:background="@color/lightGreen">
 
     <!--in this we are displaying a nested scroll view-->
     <androidx.core.widget.NestedScrollView
@@ -15,13 +15,12 @@
         android:id="@+id/nested_sV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAccent"
-
+        android:background="@color/lightGreen"
         >
 
         <!--linear layout for displaying
             our recycler view-->
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -31,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@android:color/transparent"
                 >
                 <TextView
                     android:layout_width="match_parent"
@@ -55,12 +55,14 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/contests_rv"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:nestedScrollingEnabled="false"
                 android:overScrollMode="never"
-                tools:listitem="@layout/contest_list_item" />
-        </LinearLayout>
+                android:orientation="vertical"
+                tools:listitem="@layout/rv_item_contests"
+                />
+        </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
 

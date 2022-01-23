@@ -5,9 +5,11 @@ import android.net.ConnectivityManager;
 
 public class NetworkUtils {
 //    public static final String BASE_URL =  "http://192.168.1.107:8000";
-    public static final String BASE_URL =  "http://192.168.1.36";
-//    public static final String BASE_URL =  "http://192.168.43.130";
+//    public static final String BASE_URL =  "http://192.168.1.106";
+//    public static final String BASE_URL =  "http://192.168.43.106";
 //    public static final String BASE_URL =   "https://luckywheelapp.000webhostapp.com/";
+    public static final String BASE_URL =   "http://tsetnet.com";
+
 
     public static final String BASE_API_FOLDER = "lucky_wheel_api/user";
     public static final String REGISTER_FILE = "user_register.php";
@@ -17,6 +19,8 @@ public class NetworkUtils {
     public static final String GET_USER_DATA_FILE = "user_get_data.php";
     public static final String GET_ALL_CONTESTS_FILE = "user_get_all_contests.php";
     public static final String MAKE_USER_PARTICIPANT_FILE = "user_make_participant.php";
+    public static final String TRANSFER_POINTS_TO_BALANCE_FILE = "user_transfer_points.php";
+    public static final String WITHDRAWAL_REQUEST_FILE = "user_withdrawal_request.php";
 
 
 
@@ -54,7 +58,14 @@ public class NetworkUtils {
             NetworkUtils.BASE_URL + "/" +
                     NetworkUtils.BASE_API_FOLDER + "/" +
                     NetworkUtils.EDIT_POINTS_FILE;
-
+    public static final String TRANSFER_POINTS_TO_BALANCE_URL =
+            NetworkUtils.BASE_URL + "/" +
+                    NetworkUtils.BASE_API_FOLDER + "/" +
+                    NetworkUtils.TRANSFER_POINTS_TO_BALANCE_FILE;
+    public static final String  WITHDRAWAL_REQUEST_URL=
+            NetworkUtils.BASE_URL + "/" +
+                    NetworkUtils.BASE_API_FOLDER + "/" +
+                    NetworkUtils.WITHDRAWAL_REQUEST_FILE;
     public static boolean checkInternetConnection(Context context){
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         return (cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected());

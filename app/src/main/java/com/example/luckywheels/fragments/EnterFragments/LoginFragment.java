@@ -61,7 +61,7 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if(SharedPrefs.getBoolean(getContext(),SharedPrefs.KEY_CONNECTION_STATE) == false){
-            Toast.makeText(getContext(), R.string.connectionToast, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.check_connection, Toast.LENGTH_SHORT).show();
         }
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +104,7 @@ public class LoginFragment extends Fragment {
                                 String lastName = jsonObject.getString("last_name");
                                 String email =  jsonObject.getString("email");
                                 int points = jsonObject.getInt("points");
-                                int balance = jsonObject.getInt("balance");
+                                float balance = Float.parseFloat(jsonObject.getString("balance"));
                                 String ref_code = jsonObject.getString("referral_code");
                                 int ref_times = jsonObject.getInt("ref_times");
 

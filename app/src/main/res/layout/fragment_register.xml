@@ -27,9 +27,10 @@
                 android:layout_height="@dimen/reg_edit_text_height"
                 android:background="@drawable/bg_edit_text"
                 android:hint="@string/first_name"
-                android:inputType="text"
+                android:inputType=""
                 android:textSize="@dimen/reg_edit_text_text_size"
-                android:paddingStart="@dimen/reg_edit_text_padding_start"/>
+                android:paddingStart="@dimen/reg_edit_text_padding_start"
+                />
             />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,6 +97,7 @@
                 android:inputType="text"
                 android:textSize="@dimen/reg_edit_text_text_size"
                 android:paddingStart="@dimen/reg_edit_text_padding_start"
+
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -105,7 +107,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/colorAccent">
+            app:passwordToggleTint="@color/lightGreen">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/reg_password"
@@ -124,7 +126,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/colorAccent">
+            app:passwordToggleTint="@color/lightGreen">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/reg_password_confirm"

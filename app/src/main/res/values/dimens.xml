@@ -13,8 +13,12 @@
     <dimen name="bg_item_w_l_radius">45dp</dimen>
 
     <!-- Winners List Item -->
-    <dimen name="item_tv_fixed_txt_size">20sp</dimen>
-    <dimen name="item_tv_txt_size">25sp</dimen>
+    <dimen name="item_tv_fixed_txt_size">18sp</dimen>
+    <dimen name="item_tv_txt_size">16sp</dimen>
 
     <dimen name="profile_text_size">25sp</dimen>
+
+<!--    new profile dimens-->
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="headerTextSize">28sp</dimen>
 </resources>

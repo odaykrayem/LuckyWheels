@@ -27,6 +27,7 @@ import com.example.luckywheels.EnterScreenActivity;
 import com.example.luckywheels.HomeActivity;
 import com.example.luckywheels.Models.UserModel;
 import com.example.luckywheels.R;
+import com.example.luckywheels.Utils.Constants;
 import com.example.luckywheels.Utils.NetworkUtils;
 import com.example.luckywheels.Utils.SharedPrefs;
 import com.google.android.material.textfield.TextInputLayout;
@@ -175,57 +176,61 @@ public class RegisterFragment extends Fragment {
 
     }
     private boolean validateInput() {
+//        String arabicRegex = "^[\\u0621-\\u064A]+$";
+        String regex1 = "^\\p{L}*$";
+
         if (reg_first_name.getText().toString().trim().isEmpty()) {
-            reg_first_name.setError("Please fill out this field");
+            reg_first_name.setError(getResources().getString(R.string._reg_fill_field_error));
             progressBar.setVisibility(View.VISIBLE);
             return false;
         } else {
-            String regex = "^[a-zA-Z]+$";
-            if (!reg_first_name.getText().toString().trim().matches(regex) || reg_first_name.getText().toString().trim().length() < 3) {
-                reg_first_name.setError("Please fill out this field with valid first name > 3 letters");
+//            String regex = "^[a-zA-Z]+$";
+            if (!reg_first_name.getText().toString().trim().matches(regex1) || reg_first_name.getText().toString().trim().length() < 3) {
+                reg_first_name.setError(getResources().getString(R.string._reg_name_error));
+                System.out.println(reg_first_name.getText().toString());
                 return false;
             }
         }
         if (reg_middle_name.getText().toString().trim().isEmpty()) {
 
-            reg_middle_name.setError("Please fill out this field");
+            reg_middle_name.setError(getResources().getString(R.string._reg_fill_field_error));
             return false;
         } else {
-            String regex = "^[a-zA-Z]+$";
-            if (!reg_middle_name.getText().toString().trim().matches(regex) || reg_middle_name.getText().toString().trim().length() < 3) {
-                reg_middle_name.setError("Please fill out this field with a valid mid name > 3 letters");
+            if (!reg_middle_name.getText().toString().trim().matches(regex1) || reg_middle_name.getText().toString().trim().length() < 3) {
+                reg_middle_name.setError(getResources().getString(R.string._reg_name_error));
                 return false;
             }
         }
         if (reg_last_name.getText().toString().trim().isEmpty()) {
 
-            reg_last_name.setError("Please fill out this field");
+            reg_last_name.setError(getResources().getString(R.string._reg_fill_field_error));
             return false;
         } else {
-            String regex = "^[a-zA-Z]+$";
-            if (!reg_last_name.getText().toString().trim().matches(regex) || reg_last_name.getText().toString().trim().length() < 3) {
-                reg_last_name.setError("Please fill out this field with a valid last name > 3 letters");
+            if (!reg_last_name.getText().toString().trim().matches(regex1) || reg_last_name.getText().toString().trim().length() < 3) {
+                reg_last_name.setError(getResources().getString(R.string._reg_name_error));
                 return false;
             }
         }
         if (reg_email.getText().toString().trim().isEmpty()) {
 
-            reg_email.setError("Please fill out this field");
+            reg_email.setError(getResources().getString(R.string._reg_fill_field_error));
             return false;
         } else {
             String regex = "^(.+)@(.+)$";
+//            String regex = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
+
             if (!reg_email.getText().toString().trim().matches(regex) ) {
-                reg_last_name.setError("Please fill out this field with a valid email ");
+                reg_email.setError(getResources().getString(R.string._reg_email_error));
                 return false;
             }
         }
 
         if (reg_password.getText().toString().trim().isEmpty()) {
             txtInLayoutRegPassword.setPasswordVisibilityToggleEnabled(false);
-            reg_password.setError("Please fill out this field");
+            reg_password.setError(getResources().getString(R.string._reg_fill_field_error));
             return false;
         } else if (reg_password.getText().toString().trim().length() < 4) {
-            reg_password.setError("password should be more than 3 characters");
+            reg_password.setError(getResources().getString(R.string._reg_password_error));
             return false;
         }
         else{txtInLayoutRegPassword.setPasswordVisibilityToggleEnabled(true);
@@ -233,14 +238,14 @@ public class RegisterFragment extends Fragment {
         }
         if (reg_confirm_password.getText().toString().trim().isEmpty()) {
             txtInLayoutRegPassword.setPasswordVisibilityToggleEnabled(false);
-            reg_confirm_password.setError("Please fill out this field");
+            reg_confirm_password.setError(getResources().getString(R.string._reg_fill_field_error));
             return false;
         } else {
             txtInLayoutRegPassword.setPasswordVisibilityToggleEnabled(true);
         }
         if (!reg_password.getText().toString().trim().isEmpty()) {
             if (!reg_password.getText().toString().trim().matches(reg_confirm_password.getText().toString().trim())) {
-                reg_confirm_password.setError("Please fill out this  with the same password");
+                reg_confirm_password.setError(getResources().getString(R.string._reg_confirm_pass_error));
                 reg_confirm_password.setText("");
                 return false;
             }

@@ -35,6 +35,7 @@ public class EnterScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_screen);
+
         // check if the user is already logged in
         Boolean loginState = SharedPrefs.getBoolean(this, SharedPrefs.KEY_LOG_IN_STATE, false);
         if(loginState ){
@@ -42,9 +43,7 @@ public class EnterScreenActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-        if(checkInternetConnection(this)){
-            SharedPrefs.savePref(this, SharedPrefs.KEY_CONNECTION_STATE, false);
-        }
+
         // check if the user is already logged in
         int userId = SharedPrefs.getInt(this, SharedPrefs.LOGGED_IN_KEY, -1);
         if(userId != -1){
@@ -86,8 +85,5 @@ public class EnterScreenActivity extends AppCompatActivity {
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
     }
-    public static boolean checkInternetConnection(Context context){
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        return (cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected());
-    }
+
 }

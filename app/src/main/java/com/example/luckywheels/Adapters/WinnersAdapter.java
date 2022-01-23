@@ -42,7 +42,11 @@ public class WinnersAdapter extends RecyclerView.Adapter<WinnersAdapter.ViewHold
         ParticipantModel participantModel = participantModelArrayList.get(position);
 
         holder.userNameTV.setText(participantModel.getUser_name().trim());
-        holder.emailTV.setText(participantModel.getEmail().trim().substring(0,5)+"********");
+        if (participantModel.getEmail().trim().length() > 5) {
+            holder.emailTV.setText(participantModel.getEmail().trim().substring(0, 3) + "********");
+        } else {
+            holder.emailTV.setText(participantModel.getEmail().trim());
+        }
         holder.prizeTV.setText(String.valueOf(participantModel.getPrize()));
 
     }

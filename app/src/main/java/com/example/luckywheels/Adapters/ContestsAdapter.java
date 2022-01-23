@@ -1,5 +1,6 @@
 package com.example.luckywheels.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 //import com.bumptech.glide.Glide;
 //import com.example.gridsample.R;
@@ -24,12 +25,24 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.luckywheels.HomeActivity;
 import com.example.luckywheels.Models.ContestModel;
 import com.example.luckywheels.R;
 import com.example.luckywheels.Utils.NetworkUtils;
 import com.example.luckywheels.Utils.SharedPrefs;
+import com.example.luckywheels.fragments.HomeFragments.LotteryFragment;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,57 +50,65 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ContestsAdapter extends RecyclerView.Adapter<ContestsAdapter.ViewHolder>{
+public class ContestsAdapter extends RecyclerView.Adapter<ContestsAdapter.ViewHolder> {
 
     Context context;
     private ArrayList<ContestModel> contests;
+    //    static private InterstitialAd mInterstitialAd ;
+
+    Fragment fragment;
+    ItemClickListener itemClickListener;
+    String user_id;
     static String TAG = "Contests Adapter";
 
-    public ContestsAdapter(Context context, ArrayList<ContestModel> contests) {
+    public ContestsAdapter(Context context, ArrayList<ContestModel> contests , Fragment fragment) {
         this.context = context;
         this.contests = contests;
+        this.fragment = fragment;
+
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View listItem= layoutInflater.inflate(R.layout.contest_list_item, parent, false);
+        View listItem = layoutInflater.inflate(R.layout.rv_item_contests, parent, false);
         ViewHolder viewHolder = new ViewHolder(listItem);
-
         return viewHolder;
     }
 
+    @Override
+    public void onAttachedToRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+        if(fragment instanceof ContestsAdapter.ItemClickListener){
+            itemClickListener = (ContestsAdapter.ItemClickListener)fragment;
+        }else{
+            throw new RuntimeException(fragment.toString() + "must implement item click listener");
+        }
+    }
 
+    @Override
+    public void onDetachedFromRecyclerView(@NonNull RecyclerView recyclerView) {
+        super.onDetachedFromRecyclerView(recyclerView);
+        itemClickListener = null;
+    }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final ContestModel contestModel = contests.get(position);
+        user_id = String.valueOf(SharedPrefs.getInt(context, SharedPrefs.KEY_USER_ID));
 
-//        if(contestModel. == null){
-//            holder.userImage.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_baseline_person_24));
-//        }else{
-//            Glide.with(context)
-//                    .load(user.getImageUrl())
-//                    .into(holder.userImage);
-//        }
+
 
         holder.contestPrizeTV.setText(String.valueOf(contestModel.getPrize()));
-        if(contestModel.isAlreadyParticipant()){
-            holder.participateBtn.setEnabled(false);
-        }else{
-            holder.participateBtn.setEnabled(true);
-        }
+        holder.drawDateTV.setText(contestModel.getDraw_date());
+        holder.drawTimeTV.setText(contestModel.getDraw_time());
+
         holder.participateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!NetworkUtils.checkInternetConnection(context)){
-                    Toast.makeText(context, R.string.checkInternetConn, Toast.LENGTH_SHORT).show();
-                }else{
-                    addUserToParticipantList(contestModel.getId());
-                    notifyDataSetChanged();
-                    //ToDO : refresh recycle view and make other contests disabled
-                }
+                itemClickListener.itemClicked(contestModel.getId());
+
             }
         });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -98,10 +119,9 @@ public class ContestsAdapter extends RecyclerView.Adapter<ContestsAdapter.ViewHo
         });
 
 
-
     }
 
-    private void addUserToParticipantList(int contest_id) {
+    private void addUserToParticipantList(int contest_id, String user_id) {
         // creating a new variable for our request queue
         RequestQueue queue = Volley.newRequestQueue(context);
         // creating a variable for our json object request and passing our url to it.
@@ -144,8 +164,8 @@ public class ContestsAdapter extends RecyclerView.Adapter<ContestsAdapter.ViewHo
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> parameters = new HashMap<String, String>();
-                parameters.put("user_id", String.valueOf(SharedPrefs.getInt(context,SharedPrefs.KEY_USER_ID)));
-                Log.e(TAG, String.valueOf(SharedPrefs.getInt(context,SharedPrefs.KEY_USER_ID)));
+                parameters.put("user_id", user_id);
+                Log.e(TAG, String.valueOf(SharedPrefs.getInt(context, SharedPrefs.KEY_USER_ID)));
                 parameters.put("contest_id", String.valueOf(contest_id));
                 return parameters;
             }
@@ -165,20 +185,27 @@ public class ContestsAdapter extends RecyclerView.Adapter<ContestsAdapter.ViewHo
     }
 
 
-
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView contestIV;
         public TextView contestPrizeTV;
+        public TextView drawDateTV, drawTimeTV;
         public Button participateBtn;
 
         public ViewHolder(View itemView) {
             super(itemView);
 //            this.contestIV = itemView.findViewById(R.id.contest_image);
             this.contestPrizeTV = itemView.findViewById(R.id.contest_prize_tv);
+            this.drawDateTV = itemView.findViewById(R.id.contest_draw_date_tv);
+            this.drawTimeTV = itemView.findViewById(R.id.contest_draw_time_tv);
+
             this.participateBtn = itemView.findViewById(R.id.contest_participate_btn);
 
         }
+    }
+    public interface ItemClickListener{
+        void itemClicked(int modelId);
+
     }
 }
 

@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.luckywheels">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Activities.MyWheelActivity"></activity>
         <activity android:name=".EnterScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +21,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TimerActivity"></activity>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".TimerActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:hardwareAccelerated="true"/>
 
-        </activity>
-        <activity android:name=".WheelActivity" />
         <activity android:name=".MainActivity" />
 
-        <service android:name=".Services.CountdownService"></service>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4268247002060118~9456473373" />
+
+        <service android:name=".Services.CountdownService" />
+        <service android:name=".Services.OneMinuteCountDownService" />
+
     </application>
 
 </manifest>

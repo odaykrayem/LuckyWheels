@@ -5,9 +5,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="ltr"
     tools:context=".HomeActivity"
-    tools:openDrawer="start">
+    tools:openDrawer="end">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -21,16 +20,37 @@
             android:background="@color/colorPrimary"
             android:elevation="4dp"
             android:gravity="center"
-            android:layoutDirection="ltr"
             android:textAlignment="center"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGreen"
+    >
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/adView">
+    </FrameLayout>
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/home_banner_unit_id"
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="start" />
+        />
+</RelativeLayout>
+
+
+
+
 
     </LinearLayout>
 
@@ -56,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:fontFamily="serif-monospace"
-                android:onClick="goToLuckyWheel"
+                android:onClick="onClickMenuButton"
                 android:gravity="center"
                 android:drawableBottom="@drawable/ic_roulette_game_102_rb"
                 android:paddingTop="8dp"
@@ -75,7 +95,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:fontFamily="@string/menu_text_font_family"
-                    android:onClick="goToLottery"
+                    android:onClick="onClickMenuButton"
                     android:text="@string/menu_lottery_string"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/menu_text_size"
@@ -94,7 +114,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/bg_menu_btn"
                     android:fontFamily="@string/menu_text_font_family"
-                    android:onClick="goToWinnersList"
+                    android:onClick="onClickMenuButton"
                     android:text="@string/menu_lottery_winner_list_string"
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/menu_list_text_size"
@@ -110,7 +130,7 @@
                 android:layout_height="0dp"
                 android:background="@drawable/bg_menu_btn"                    android:layout_weight="1"
                 android:fontFamily="@string/menu_text_font_family"
-                android:onClick="gotoProfile"
+                android:onClick="onClickMenuButton"
                 android:text="@string/menu_profile_string"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/menu_text_size"

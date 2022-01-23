@@ -5,8 +5,7 @@
     android:id="@+id/swipe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="6dp"
-    android:background="@color/colorAccent">
+    android:background="@color/light_gold_bg">
 
     <!--in this we are displaying a nested scroll view-->
     <androidx.core.widget.NestedScrollView
@@ -15,21 +14,23 @@
         android:id="@+id/nested_sV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAccent"
         >
 
         <!--linear layout for displaying
             our recycler view-->
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             >
+
             <LinearLayout
                 android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 >
                 <TextView
                     android:layout_width="match_parent"
@@ -52,13 +53,18 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_winners"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false"
                 tools:listitem="@layout/rv_item_winners"
                 />
+            <nl.dionsegijn.konfetti.KonfettiView
+                android:id="@+id/viewKonfetti"
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:layout_alignParentTop="true"
+                />
 
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.core.widget.NestedScrollView>
 
